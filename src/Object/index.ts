@@ -1,13 +1,16 @@
-type objectType = {
+type ObjectType = {
   name: string
   age: number
 }
 
-const object: objectType = {
+const object: ObjectType = {
   name: 'John',
   age: 20
 }
 
 export const checkObjectType = () => {
-  console.log(object)
+  console.log({ object })
+  Object.values(object).forEach((value) => {
+    console.log(value)
+  })
 }
