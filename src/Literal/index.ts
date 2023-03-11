@@ -10,7 +10,7 @@ type ButtonVariant = 'primary' | 'secondary' | 'danger'
 
 const buttonLiteral: ButtonVariant = 'primary'
 
-export const cheekLiteral = () => {
+export const checkLiteral = () => {
   console.log(foo)
   console.log(buttonLiteral)
 }
