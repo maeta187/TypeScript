@@ -1,6 +1,6 @@
 const array: number[] = [0, 1, 2, 3, 4, 5]
 
-export const cheekArrayType = () => {
+export const checkArrayType = () => {
   console.log(array)
 }
 
