@@ -4,6 +4,7 @@
 // import { checkLiteral } from './Literal'
 // import { checkFunction, arrowFunction, callbackFunction } from './Function'
 import { checkUnknown } from './Unknown'
+// import { error } from './Never'
 
 // checkObjectType()
 // checkArrayType()
@@ -16,3 +17,4 @@ import { checkUnknown } from './Unknown'
 //   return cbFunction * 10
 // })
 checkUnknown()
+// console.log(error('This is an Error'))
