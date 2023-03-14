@@ -3,8 +3,9 @@
 // import Tuple from './Tuple'
 // import { checkLiteral } from './Literal'
 // import { checkFunction, arrowFunction, callbackFunction } from './Function'
-import { checkUnknown } from './Unknown'
+// import { checkUnknown } from './Unknown'
 // import { error } from './Never'
+import { checkClass } from './Class'
 
 // checkObjectType()
 // checkArrayType()
@@ -16,5 +17,6 @@ import { checkUnknown } from './Unknown'
 // callbackFunction(2, (cbFunction) => {
 //   return cbFunction * 10
 // })
-checkUnknown()
+// checkUnknown()
 // console.log(error('This is an Error'))
+checkClass()
