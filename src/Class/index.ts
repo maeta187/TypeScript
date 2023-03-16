@@ -7,7 +7,11 @@ class Person {
   }
 
   // TypeScriptは第一引数にthisを伝えることができる(第一引数にしか書けない)
-  greeting(this: { name: string }) {
+  // greeting(this: { name: string }) {
+  //   console.log(`Hello! My name is ${this.name}`)
+  // }
+  // Class作り出すインスタンスを表す型を同時に作る
+  greeting(this: Person) {
     console.log(`Hello! My name is ${this.name}`)
   }
   // アロー関数は定義時に決まる(インスタンス化)
@@ -21,10 +25,10 @@ const person = new Person('Quill')
 const anotherQuill = {
   // nameが無いとgreeting()で参照するthis.nameはundefinedとなる
   name: 'anotherQuill',
-  anotherGreeting: person.greeting
+  greeting: person.greeting
 }
 export const checkClass = () => {
   // console.log(person)
   person.greeting()
-  anotherQuill.anotherGreeting()
+  anotherQuill.greeting()
 }
