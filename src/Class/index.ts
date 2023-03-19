@@ -81,7 +81,11 @@ teacher.subject = 'Music'
 //   incrementAge: person.incrementAge.bind(person)
 // }
 export const checkClass = () => {
-  // console.log(person)
-  person.greeting()
   // anotherQuill.greeting()
+  teacher.greeting()
+  // console.log(teacher.subject)
+  // console.log(Person.species)
+  // console.log(Person.isAdult(30))
+  // console.log(Teacher.species)
+  // console.log(Teacher.isAdult(30))
 }
