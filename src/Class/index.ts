@@ -41,7 +41,38 @@ abstract class Person {
   }
 }
 
-const person = new Person('Quill', 30)
+class Teacher extends Person {
+  private static instance: Teacher
+  explainJob() {
+    console.log(`I am teacher and I teach ${this.subject}`)
+  }
+  get subject() {
+    if (!this._subject) {
+      throw new Error('There is no subject.')
+    }
+    return this._subject
+  }
+  /**
+   * getterとsetterを同じ名前にすることによってsetterの引数に型推論が効くようになる
+   */
+  set subject(value) {
+    if (!value) {
+      throw new Error('There is no subject.')
+    }
+    this._subject = value
+  }
+  private constructor(name: string, age: number, private _subject: string) {
+    super(name, age)
+  }
+  static getInstance() {
+    if (Teacher.instance) return Teacher.instance
+    Teacher.instance = new Teacher('Quill', 30, 'Math')
+    return Teacher.instance
+  }
+}
+
+const teacher = Teacher.getInstance()
+teacher.subject = 'Music'
 
 // const anotherQuill = {
 //   // nameが無いとgreeting()で参照するthis.nameはundefinedとなる
