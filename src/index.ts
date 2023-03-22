@@ -5,7 +5,8 @@
 // import { checkFunction, arrowFunction, callbackFunction } from './Function'
 // import { checkUnknown } from './Unknown'
 // import { error } from './Never'
-import { checkClass } from './Class'
+// import { checkClass } from './Class'
+import { checkInterface } from './Interface'
 
 // checkObjectType()
 // checkArrayType()
@@ -19,4 +20,5 @@ import { checkClass } from './Class'
 // })
 // checkUnknown()
 // console.log(error('This is an Error'))
-checkClass()
+// checkClass()
+checkInterface()
