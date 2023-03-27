@@ -4,7 +4,6 @@ interface Nameable {
 
 /**
  * ユニオン型にすると必ずそのプロパティーが必要だが、オプショナルプロパティにすると、そのプロパティ＝がなくてもエラーにならない
- *
  */
 type NameableTYpe = {
   name: string
