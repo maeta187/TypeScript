@@ -160,6 +160,14 @@ const downloadedData: DownloadedData = {
   id: 1
 }
 
+/**
+ * Nullish Coalescing
+ * 「??」を使用することで対象の値がfalseの時に代入する値を設定する
+ * OR演算子などでも代用できるが、OR演算子の場合は空文字や0でもfalseになる
+ * Nullish Coalescingを使用することで空文字や0の場合でも対象の値がtrueになる（undefinedとnullのみがfalseとなる）
+ */
+const userData = downloadedData.user ?? 'no-user'
+
 export const checkApply = () => {
   console.log(quill)
   console.log(toUpperCase('quill'))
