@@ -176,9 +176,44 @@ type id = DownloadedData['id']
 type foo = DownloadedData['id' | 'user']
 // type name = DownloadedData['user']['name']
 
+/**
+ * 型の互換性
+ * enum型とNumber型には互換性がある
+ * 関数は元の関数の引数より上書きする側の引数が多くなるとエラーとなる
+ * Classの場合は同じプロパティが存在する場合は問題ないが代入側のプロパティがprivateの場合はエラーとなる
+ */
+// enum Color {
+//   RED,
+//   BLUE
+// }
+// let target = 0
+// const source = Color.RED
+// let target = function (a: string, b: string) {
+//   return
+// }
+// const source = function (a: string) {
+//   return
+// }
+// target('hi', 'hello')
+// class AdvancedPerson {
+//   name = 'Perter'
+//   age = 30
+// }
+// class AdvancedCar {
+//   name = 'Prius'
+//   age = 7
+// }
+
+// let target = new AdvancedPerson()
+// const source = new AdvancedCar()
+// target = source
+
 export const checkApply = () => {
   console.log(quill)
   console.log(toUpperCase('quill'))
   describeProfile(worker)
   havePet(new Bird())
+  console.log(designer)
+  console.log(upperHello)
+  console.log(downloadedData.user?.name)
 }
