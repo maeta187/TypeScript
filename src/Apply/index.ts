@@ -112,6 +112,23 @@ function havePet(pet: Pet) {
 // const input = document.getElementById('input')!
 // input.value = 'initial input value'
 
+/**
+ * インデックスシグネチャ
+ * 型定義されたオブジェクトは後から追加は行えないが、インデックスシグネチャを使用するで型定義されていない要素を追加することができる
+ * 追加する際は、インデックスシグネチャで定義された型である必要がある
+ * ただし、keyをstring型にし場合でもnumber型が書ける(number型の場合はstring型は書けない)
+ * インデックスシグネチャを使用した場合、オブジェクト内の要素を参照する際、存在しない要素を書いてもエラーと認識されなくなるので注意が必要
+ */
+interface Designer {
+  name: string
+  [index: string]: string
+}
+
+const designer: Designer = {
+  name: 'Quill',
+  role: 'foo'
+}
+
 export const checkApply = () => {
   console.log(quill)
   console.log(toUpperCase('quill'))
