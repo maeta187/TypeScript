@@ -140,6 +140,26 @@ const designer: Designer = {
   role: 'foo'
 }
 
+/**
+ * オプショナルチェイン
+ * 対象のkeyが存在しない場合がある時に使用する
+ * 存在しない場合はundefinedとなる
+ * downloadedData.user?.name
+ */
+interface DownloadedData {
+  id: number
+  user?: {
+    name?: {
+      fist: string
+      last: string
+    }
+  }
+}
+
+const downloadedData: DownloadedData = {
+  id: 1
+}
+
 export const checkApply = () => {
   console.log(quill)
   console.log(toUpperCase('quill'))
