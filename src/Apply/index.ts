@@ -96,6 +96,22 @@ function havePet(pet: Pet) {
   }
 }
 
+/**
+ * 型アサーション
+ * 元々持っている型に対して明示的に指定し、指定した型することができる
+ * 「<>」を使う方法と「as」を使用した方法がある
+ * JSX内で書く場合は「<>」がHTML要素として処理される場合があるので気をつける
+ */
+// const input = <HTMLInputElement>document.getElementById('input')
+// const input = document.getElementById('input') as HTMLInputElement
+// input.value = 'initial input value'
+;(document.getElementById('input') as HTMLInputElement).value =
+  'initial input value'
+
+// Non-null assertion operator
+// const input = document.getElementById('input')!
+// input.value = 'initial input value'
+
 export const checkApply = () => {
   console.log(quill)
   console.log(toUpperCase('quill'))
