@@ -62,12 +62,16 @@ function describeProfile(nomadWorker: NomadWorker) {
 }
 
 class Dog {
+  // タグ付きUnion
+  kind = 'dog' as const
   speak() {
     console.log('bow-wow')
   }
 }
 
 class Bird {
+  // タグ付きUnion
+  kind = 'bird' as const
   speak() {
     console.log('tweet-tweet')
   }
@@ -83,6 +87,10 @@ class Bird {
 type Pet = Dog | Bird
 function havePet(pet: Pet) {
   pet.speak()
+  switch (pet.kind) {
+    case 'bird':
+      pet.fly()
+  }
   if (pet instanceof Bird) {
     pet.fly()
   }
