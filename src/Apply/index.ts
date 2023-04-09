@@ -32,12 +32,23 @@ type StringNumber = string | number
 /**
  * typeof演算子
  */
+function toUpperCase(x: string): string
+function toUpperCase(x: number): number
 function toUpperCase(x: string | number) {
   if (typeof x === 'string') {
     return x.toUpperCase()
   }
-  return ''
+  return x
 }
+
+/**
+ * 関数オーバーロード
+ * toUpperCase()の引数がstring型とnumber型のユニオン型かつreturnもxをそのまま返すパターンがあるので型推論もユニオン型となる
+ * 型アサーションを使う方法もあるが使い回す時に都度書く必要がある
+ * 実行している関数の上に定義し直した関数を書くと、関数のオーバーロードがされる
+ * その場合、実際に動く関数の型は認識されなくなる
+ */
+const upperHello = toUpperCase('hello')
 
 /**
  * in演算子
