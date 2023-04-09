@@ -168,6 +168,14 @@ const downloadedData: DownloadedData = {
  */
 const userData = downloadedData.user ?? 'no-user'
 
+/**
+ * LookUp型
+ * オブジェクト型から一部の型を参照して、型定義する
+ */
+type id = DownloadedData['id']
+type foo = DownloadedData['id' | 'user']
+// type name = DownloadedData['user']['name']
+
 export const checkApply = () => {
   console.log(quill)
   console.log(toUpperCase('quill'))
