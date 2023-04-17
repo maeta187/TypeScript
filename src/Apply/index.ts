@@ -75,8 +75,17 @@ const intersectionFunc: FuncA & FuncB = function (
 ) {
   return 0
 }
+
+/**
+ * ユニオン型にした場合、パラメーターはインターセクション型になり返り値はユニオン型となる
  */
-const upperHello = toUpperCase('hello')
+
+const unionFunc: FuncA | FuncB = function (
+  a: number | string,
+  b?: number | string
+) {
+  return 0
+}
 
 /**
  * in演算子
@@ -245,4 +254,5 @@ export const checkApply = () => {
   console.log(upperHello)
   console.log(downloadedData.user?.name)
   console.log(intersectionFunc(''))
+  console.log(unionFunc('', 0))
 }
