@@ -28,13 +28,13 @@ type StringNumber = string | number
  */
 // type Mix = NumberBoolean & StringNumber
 
-// タイプガード
-/**
- * typeof演算子
- */
 function toUpperCase(x: string): string
 function toUpperCase(x: number): number
 function toUpperCase(x: string | number) {
+  /**
+   * タイプガード
+   * typeof演算子
+   */
   if (typeof x === 'string') {
     return x.toUpperCase()
   }
@@ -47,6 +47,34 @@ function toUpperCase(x: string | number) {
  * 型アサーションを使う方法もあるが使い回す時に都度書く必要がある
  * 実行している関数の上に定義し直した関数を書くと、関数のオーバーロードがされる
  * その場合、実際に動く関数の型は認識されなくなる
+ * 関数を変数に代入した時は型推論でオーバーロードで書かれた型をすべて持ったinterfaceが表示される
+ */
+
+const upperHello = toUpperCase
+
+/**
+ * 関数オーバーロードの型定義
+ * 関数オーバーロードの型定義を行う際はオーバーロードされる型をすべて書く必要がある。
+ */
+interface FuncA {
+  (a: string, b: string): number
+  (a: string, b: number): number
+}
+
+interface FuncB {
+  (a: string): number
+}
+
+/**
+ * インターセクションを使用した場合はすべての型が含まれるようになり、左側から優先的型定義される
+ */
+
+const intersectionFunc: FuncA & FuncB = function (
+  a: number | string,
+  b?: number | string
+) {
+  return 0
+}
  */
 const upperHello = toUpperCase('hello')
 
@@ -216,4 +244,5 @@ export const checkApply = () => {
   console.log(designer)
   console.log(upperHello)
   console.log(downloadedData.user?.name)
+  console.log(intersectionFunc(''))
 }
