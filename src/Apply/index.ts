@@ -245,6 +245,19 @@ type foo = DownloadedData['id' | 'user']
 // const source = new AdvancedCar()
 // target = source
 
+/**
+ * レストパラメーター
+ * 型配列でもできるがタプルでも指定できる
+ * タプルで指定した場合は書いた順番に型を一致させる必要がある
+ * タプルのみスプレッド構文が使用できる
+ * オプショナルパラメーターも使用できる
+ */
+
+function advancedFn(...args: [number, string, boolean, ...number[]]) {
+  console.log({ args })
+  return
+}
+
 export const checkApply = () => {
   console.log(quill)
   console.log(toUpperCase('quill'))
@@ -255,4 +268,5 @@ export const checkApply = () => {
   console.log(downloadedData.user?.name)
   console.log(intersectionFunc(''))
   console.log(unionFunc('', 0))
+  advancedFn(1, 'hi', true, 1, 1, 1, 1)
 }
