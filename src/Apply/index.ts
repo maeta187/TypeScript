@@ -251,9 +251,10 @@ type foo = DownloadedData['id' | 'user']
  * タプルで指定した場合は書いた順番に型を一致させる必要がある
  * タプルのみスプレッド構文が使用できる
  * オプショナルパラメーターも使用できる
+ * 配列とタプルにreadonlyをつけることができる
  */
 
-function advancedFn(...args: [number, string, boolean, ...number[]]) {
+function advancedFn(...args: readonly [number, string, boolean, ...number[]]) {
   console.log({ args })
   return
 }
