@@ -259,6 +259,20 @@ function advancedFn(...args: readonly [number, string, boolean, ...number[]]) {
   return
 }
 
+/**
+ * constアサーション
+ * as constをつけることで書き換え不可能な値となる
+ * 配列やオブジェクトにつけた場合は追加もできない
+ */
+
+const milk = 'milk' as const
+// let drink = milk
+const array = [10, 20] as const
+const peter = {
+  name: 'Peter',
+  age: 30
+} as const
+
 export const checkApply = () => {
   console.log(quill)
   console.log(toUpperCase('quill'))
