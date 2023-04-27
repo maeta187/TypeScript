@@ -273,6 +273,13 @@ const peter = {
   age: 30
 } as const
 
+/**
+ * 型の中でtypeofを使用する
+ * 型を作る時にtypeofの後に値を使用するとその値の型を取得する
+ */
+
+type PeterType = typeof peter
+
 export const checkApply = () => {
   console.log(quill)
   console.log(toUpperCase('quill'))
@@ -284,4 +291,7 @@ export const checkApply = () => {
   console.log(intersectionFunc(''))
   console.log(unionFunc('', 0))
   advancedFn(1, 'hi', true, 1, 1, 1, 1)
+  console.log(milk)
+  console.log({ array })
+  console.log({ peter })
 }
