@@ -6,7 +6,8 @@
 // import { checkUnknown } from './Unknown'
 // import { error } from './Never'
 // import { checkClass } from './Class'
-import { checkInterface } from './Interface'
+// import { checkInterface } from './Interface'
+import { checkGenerics } from './Generics'
 
 // checkObjectType()
 // checkArrayType()
@@ -21,4 +22,5 @@ import { checkInterface } from './Interface'
 // checkUnknown()
 // console.log(error('This is an Error'))
 // checkClass()
-checkInterface()
+// checkInterface()
+checkGenerics()
