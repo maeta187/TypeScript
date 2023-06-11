@@ -64,7 +64,7 @@ class Developer implements HumanType {
  * 構造的部分型
  * HumanにexperienceがなくてもHumanに書かれている型を満たしているのでエラーが起きない
  */
-const tmpDeveloper = {
+const tmpDeveloper: Developer = {
   name: 'Quill',
   age: 29,
   experience: 3,
