@@ -82,3 +82,20 @@ type PrimaryButtonType = Exclude<ButtonVariant, 'secondary' | 'danger'>
  * 引き渡されたユニオン型(T)から指定したキー{U}を抽出した型を返す
  */
 type noDangerButtonType = Extract<ButtonVariant, 'primary' | 'secondary'>
+
+/**
+ * Parameters<T>
+ * 関数の引数からタプル型を作る
+ * 通常の型定義とは違い。関数の引数の型統一できる
+ */
+const parametersFunction = (foo: number, bar: string, fizz?: boolean) => {
+  console.log({ foo })
+  console.log({ bar })
+  console.log({ fizz })
+}
+
+type plusOneType = Parameters<typeof parametersFunction>
+
+const parametersFunctionArgs: plusOneType = [100, 'Quill', true]
+
+parametersFunction(...parametersFunctionArgs)
