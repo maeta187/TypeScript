@@ -148,3 +148,19 @@ const timer: SetTimeOutReturnType = setTimeout(() => {
 type PersonInstanceType = InstanceType<typeof Person>
 
 const personInstance: PersonInstanceType = new Person('Quill', 38)
+
+/**
+ * ThisParameterType<Type>
+ * 指定した関数のthisの型を返す
+ * Classのメソッドの型を取得する時などに使える
+ * アロー関数はthisを持たないので使えない
+ * また、参照している関数にthisがない場合はunknown型を返す
+ */
+
+function toCastString() {
+  return this.toString()
+}
+
+function numberToString(n: ThisParameterType<typeof toCastString>) {
+  return toCastString.apply(n)
+}
