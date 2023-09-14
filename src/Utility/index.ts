@@ -123,3 +123,15 @@ const constructorParametersPersonType: ConstructorParametersPersonType = [
   'Quill',
   38
 ]
+
+/**
+ * ReturnType<Type>
+ * 関数の戻り値の型を返す
+ * サードパーティのライブラリの型を取得する時などに使える
+ */
+
+type SetTimeOutReturnType = ReturnType<typeof setTimeout>
+
+const timer: SetTimeOutReturnType = setTimeout(() => {
+  console.log('foo')
+}, 3000)
