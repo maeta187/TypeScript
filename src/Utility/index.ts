@@ -108,3 +108,18 @@ type plusOneType = Parameters<typeof parametersFunction>
 const parametersFunctionArgs: plusOneType = [100, 'Quill', true]
 
 parametersFunction(...parametersFunctionArgs)
+
+/**
+ * ConstructorParameters<Type>
+ * Classのコンストラクタの引数からタプル型または、Array型を作る
+ */
+class Person {
+  constructor(public name: string, public age: number) {}
+}
+
+type ConstructorParametersPersonType = ConstructorParameters<typeof Person>
+
+const constructorParametersPersonType: ConstructorParametersPersonType = [
+  'Quill',
+  38
+]
