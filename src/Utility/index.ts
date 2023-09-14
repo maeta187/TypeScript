@@ -84,6 +84,15 @@ type PrimaryButtonType = Exclude<ButtonVariant, 'secondary' | 'danger'>
 type noDangerButtonType = Extract<ButtonVariant, 'primary' | 'secondary'>
 
 /**
+ * NonNullable<T>
+ * 引き渡された型からnullとundefinedを除外した型を返す
+ */
+
+type NullableType = string | null | undefined
+
+type NonNullableType = NonNullable<NullableType>
+
+/**
  * Parameters<T>
  * 関数の引数からタプル型を作る
  * 通常の型定義とは違い。関数の引数の型統一できる
