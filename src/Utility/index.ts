@@ -135,3 +135,16 @@ type SetTimeOutReturnType = ReturnType<typeof setTimeout>
 const timer: SetTimeOutReturnType = setTimeout(() => {
   console.log('foo')
 }, 3000)
+
+/**
+ * InstanceType<Type>
+ * Classのインスタンスの型を返す
+ * 自分の実装したClassであれば「type PersonInstanceType = Person」でも同じことができる
+ * なので普段使いする型ではない
+ * クラス定義にアクセスできない場合・不明(ジェネリクスを使う)な場合などがある
+ * 参考: https://zenn.dev/ytr0903/articles/905306671f39c8
+ */
+
+type PersonInstanceType = InstanceType<typeof Person>
+
+const personInstance: PersonInstanceType = new Person('Quill', 38)
