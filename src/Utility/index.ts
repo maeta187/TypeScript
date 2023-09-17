@@ -164,3 +164,28 @@ function toCastString() {
 function numberToString(n: ThisParameterType<typeof toCastString>) {
   return toCastString.apply(n)
 }
+
+/**
+ * OmitThisParameter<Type>
+ * 指定した関数の引数に存在するthisを削除する
+ * this以外の引数はそのまま残る
+ */
+
+function displayProfile(arg: boolean) {
+  console.log(this.name)
+  console.log(this.age)
+  console.log(arg)
+}
+
+type OmitThisParameterType = OmitThisParameter<typeof displayProfile>
+
+const omitThisParameterFunction: OmitThisParameterType = function (arg) {
+  displayProfile.call(
+    {
+      name: 'Quill',
+      age: 38
+    },
+    arg
+  )
+}
+omitThisParameterFunction(true)
