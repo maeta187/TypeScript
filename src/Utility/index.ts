@@ -189,3 +189,28 @@ const omitThisParameterFunction: OmitThisParameterType = function (arg) {
   )
 }
 omitThisParameterFunction(true)
+
+/**
+ * ThisType<T>
+ * thisの型を指定する
+ * 指定された型をthisから参照できるようになる
+ * */
+
+interface Greetings {
+  hello(): void
+}
+
+const user: Greetings & ThisType<Developer> = {
+  hello() {
+    console.log(this.name)
+    console.log(this.age)
+    console.log(this.experience)
+  }
+}
+
+user.hello.bind({
+  name: 'Quill',
+  age: 38,
+  experience: 3
+})()
+
