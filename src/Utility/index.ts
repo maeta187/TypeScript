@@ -214,3 +214,16 @@ user.hello.bind({
   experience: 3
 })()
 
+/**
+ * Awaited<Type>
+ * Promiseの戻り値の型を返す
+ * Promiseの戻り値の型を取得する時などに使える
+ * ただし、TypeがPromiseでない場合はTypeをそのまま返す
+ * Union型の場合は片方がPromise、もう片方がtypeの場合はでも両方ともTypeを返す
+ * なので、TypeがPromiseであることを確認してから使う
+ * 参考: https://zenn.dev/okunokentaro/articles/01gm397f4bvdzkhskwh2q6dyf2
+ * */
+
+type AwaitedType = Awaited<Promise<string>>
+
+type AwaitedUnionType = Awaited<boolean | Promise<number>>
