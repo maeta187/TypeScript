@@ -17,7 +17,10 @@ class Foo extends Person {
     return false
   }
   readonly id: number = 32
-  constructor(readonly name: string, protected age: number) {
+  constructor(
+    readonly name: string,
+    protected age: number
+  ) {
     super(name, age)
   }
   greeting(this: Foo) {
