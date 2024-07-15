@@ -114,7 +114,10 @@ parametersFunction(...parametersFunctionArgs)
  * Classのコンストラクタの引数からタプル型または、Array型を作る
  */
 class Person {
-  constructor(public name: string, public age: number) {}
+  constructor(
+    public name: string,
+    public age: number
+  ) {}
 }
 
 type ConstructorParametersPersonType = ConstructorParameters<typeof Person>

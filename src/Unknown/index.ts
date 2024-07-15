@@ -1,5 +1,6 @@
 let unknownInput: unknown
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 let anyInput: any
 let text: string
 

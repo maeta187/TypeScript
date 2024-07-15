@@ -1,30 +1,21 @@
 {
   "name": "typescript",
-  "version": "1.0.0",
-  "description": "",
-  "main": "./dist/index.js",
+  "module": "./src/index.ts",
+  "type": "module",
   "scripts": {
-    "preinstall": "npx only-allow pnpm",
-    "lint-fix": "eslint --cache --fix src/ && prettier --write src/",
-    "ts": "node --loader ts-node/esm ./src/index.ts"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "packageManager": "pnpm@7.26.2",
-  "engines": {
-    "pnpm": ">=7.26.2"
+    "ts": "bun ./src/index.ts",
+    "lint": "bunx @biomejs/biome lint --write ./src",
+    "format": "bunx @biomejs/biome format --write ./src",
+    "check": "bunx @biomejs/biome check --write ./src"
   },
   "devDependencies": {
-    "@types/node": "^20.14.10",
-    "@typescript-eslint/eslint-plugin": "^5.50.0",
-    "@typescript-eslint/parser": "^5.50.0",
-    "eslint": "^8.33.0",
-    "eslint-config-prettier": "^8.6.0",
-    "prettier": "^2.8.3",
-    "typescript": "^5.5.3"
+    "@biomejs/biome": "1.8.3",
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
   },
   "dependencies": {
-    "ts-node": "^10.9.2"
+    "typescript": "^5.5.3"
   }
 }

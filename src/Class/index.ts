@@ -15,7 +15,10 @@ abstract class Person {
    * constructor()の引数に書くことで初期化を省力でき、constructor()の上部に書いていた型定義も不要
    */
   readonly id: number = 32
-  constructor(public readonly name: string, protected age: number) {
+  constructor(
+    public readonly name: string,
+    protected age: number
+  ) {
     /**
      * thisは実行された場所で依存する(変わる)
      * this.name = initName
@@ -61,7 +64,11 @@ class Teacher extends Person {
     }
     this._subject = value
   }
-  private constructor(name: string, age: number, private _subject: string) {
+  private constructor(
+    name: string,
+    age: number,
+    private _subject: string
+  ) {
     super(name, age)
   }
   static getInstance() {
