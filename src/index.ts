@@ -7,7 +7,8 @@
 // import { error } from './Never'
 // import { checkClass } from './Class'
 // import { checkInterface } from './Interface'
-import { checkGenerics } from './Generics'
+// import { checkGenerics } from './Generics'
+import { checkUsing } from './Using'
 
 // checkObjectType()
 // checkArrayType()
@@ -23,4 +24,5 @@ import { checkGenerics } from './Generics'
 // console.log(error('This is an Error'))
 // checkClass()
 // checkInterface()
-checkGenerics()
+// checkGenerics()
+// checkUsing()
