@@ -8,7 +8,9 @@
 // import { checkClass } from './Class'
 // import { checkInterface } from './Interface'
 // import { checkGenerics } from './Generics'
-import { checkUsing } from './Using'
+// import { checkUsing } from './Using'
+// import { checkGroupBy } from './GroupBy'
+import { checkNamespace } from './Namespace'
 
 // checkObjectType()
 // checkArrayType()
@@ -26,3 +28,5 @@ import { checkUsing } from './Using'
 // checkInterface()
 // checkGenerics()
 // checkUsing()
+// checkGroupBy()
+checkNamespace()
