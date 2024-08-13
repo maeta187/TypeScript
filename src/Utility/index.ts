@@ -230,3 +230,30 @@ user.hello.bind({
 type AwaitedType = Awaited<Promise<string>>
 
 type AwaitedUnionType = Awaited<boolean | Promise<number>>
+
+/**
+ * 第2引数の「D」は第1引数の「C」を参照して型定義される
+ * 第１引数はstring[]なので第１引数の配列の要素のいずれかか、undefinedが使用できる
+ */
+// const createStreetLight = <C extends string, D extends C>(
+//   colors: C[],
+//   defaultColor?: D
+// ) => {
+//   console.log(colors)
+//   console.log(defaultColor)
+// }
+
+/**
+ * NoInfer<T>
+ * 第2引数の型定義で「NoInfer」を使用すると上記と同様の型定義が行える
+ * また、上記と違い関数を読んでいる部分で型推論を行うと第2引数で使用できる引数が分かる
+ */
+const createStreetLight = <C extends string>(
+  colors: C[],
+  defaultColor?: NoInfer<C>
+) => {
+  console.log(colors)
+  console.log(defaultColor)
+}
+
+createStreetLight(['red', 'yellow', 'green'], 'green')

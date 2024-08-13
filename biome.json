@@ -55,7 +55,7 @@
         "useYield": "error"
       },
       "style": {
-        "noNamespace": "error",
+        "noNamespace": "off",
         "useAsConstAssertion": "error",
         "useBlockStatements": "off"
       },
